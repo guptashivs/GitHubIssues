@@ -1,0 +1,79 @@
+<div class="issue-list-section">
+    <div class="global-filtering-section overflow-style pad-top-10px">
+        <div class="filter-button-section">
+            <button type="button" class="btn global-filter pull-left">
+                Filters <i class="fa fa-caret-down pad-5px" aria-hidden="true"></i>
+            </button>
+            <input type="text" class="form-control search-field" name="search-field" placeholder="Search all issues" ng-model="searchFilterValues">
+        </div>
+        <div class="grouped-button pull-left">
+            <a href="#/labels" class=" button-item mar-10">Labels</a>
+            <a href="#/milestones" class=" button-item">Milestones</a>
+        </div>
+        <a href="#/newissue" class="btn btn-primary btn-style pull-right">
+            New issue
+          </a>
+    </div>
+    <p style="margin-top:10px;" class="pointer" ng-if="filterFlag" ng-click="clearFilter()"><a  ng-click="return false;" style="text-decoration: none;color:#586069"><i class="fa fa-window-close" style="margin-right:10px"></i>Clear current search query, filters, and sorts</a></p>
+    <div class="issue-list-table" ng-if="true">
+        <div class="table-header">
+            <div class="open-th pull-left pad-tb-10">
+                <span class="pad-15 pointer" ng-click="filteredList(filteredData, 'status', 'open')"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{( issueData | filter:{'status':'open'}).length}}&nbsp;Open</span>
+            </div>
+            <div class="close-th pull-left pad-tb-10">
+                <span class="pad-15 pointer" ng-click="filteredList(filteredData, 'status', 'closed')"><i class="fa fa-check" aria-hidden="true"></i>{{(issueData | filter:{'status':'closed'}).length}} &nbsp;Closed</span>
+            </div>
+            <div class="labels-th pull-right pad-tb-10" uib-dropdown on-toggle="toggled(open)">
+                <span class="pad-15 pointer"  id="issuesort-dropdown" uib-dropdown-toggle>Sort<i class="fa fa-caret-down pad-5px" aria-hidden="true"></i></span> 
+                <ul class="dropdown-menu label-sort" uib-dropdown-menu role="menu" aria-labelledby="issuesort-dropdown">
+                    <li class="menu-item pad-15">Sort</li>
+                    <li ng-repeat="item in issueSort track by $index" ng-click="sortIssueList($index)" class="menu-item pad-15">
+                        <a href>{{item}} </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="labels-th pull-right pad-tb-10" uib-dropdown auto-close="outsideClick" is-open="toggleDropdown['assignee']">
+                <span class="pad-15 pointer" uib-dropdown-toggle>Assignee<i class="fa fa-caret-down pad-5px" aria-hidden="true"></i></span>
+                <dropdown-filter-modal label = "assignee" keyword="assignee" issue-list="issueList" toggle-dropdown="toggleDropdown['assignee']" selected = "filteredList(item, keyword)"></dropdown-filter-modal> 
+            </div>
+            <div class="labels-th pull-right pad-tb-10" uib-dropdown auto-close="outsideClick" is-open="toggleDropdown['milestones']">
+                <span class="pad-15 pointer" uib-dropdown-toggle>Milestones<i class="fa fa-caret-down pad-5px" aria-hidden="true"></i></span>
+                <dropdown-filter-modal label = "milestones" keyword="milestones" issue-list="issueList" toggle-dropdown="toggleDropdown['milestones']" selected = "filteredList(item, keyword)"></dropdown-filter-modal> 
+            </div>
+            <div class="author-th pull-right pad-tb-10" uib-dropdown auto-close="outsideClick" is-open="toggleDropdown['projects']">
+                <span class="pad-15 pointer" uib-dropdown-toggle>Projects<i class="fa fa-caret-down pad-5px" aria-hidden="true"></i></span>
+                <dropdown-filter-modal label = "projects" keyword="project" issue-list="issueList" toggle-dropdown="toggleDropdown['projects']" selected = "filteredList(item, keyword)"></dropdown-filter-modal> 
+            </div>
+            <div class="labels-th pull-right pad-tb-10" uib-dropdown auto-close="outsideClick" is-open="toggleDropdown['label']">
+                <span class="pad-15 pointer" uib-dropdown-toggle>Labels<i class="fa fa-caret-down pad-5px" aria-hidden="true"></i></span>
+                <dropdown-filter-modal label = "label" keyword="label" issue-list="issueList" toggle-dropdown="toggleDropdown['label']" selected = "filteredList(item, keyword)"></dropdown-filter-modal> 
+            </div>
+            <div class="author-th pull-right pad-tb-10 author-button" uib-dropdown auto-close="outsideClick" is-open="toggleDropdown['author']">
+                <span class="pad-15 pointer" uib-dropdown-toggle>Author<i class="fa fa-caret-down pad-5px" aria-hidden="true"></i></span>
+                <dropdown-filter-modal label = "author" keyword="author" issue-list="issueList" toggle-dropdown="toggleDropdown['author']" selected = "filteredList(item, keyword)"></dropdown-filter-modal>
+            </div>
+        </div>
+        <div class="table-body overflow-style">
+            <div class="table-row overflow-style pad-tb-5" ng-repeat="issue in filteredData track by $index">
+                <div class="issue-state-icon pull-left">
+                    <i class="fa fa-exclamation-circle pad-15" aria-hidden="true"></i>
+                </div>
+                <div class="issue-heading pull-left">
+                    <a href="#/issuedetails/{{$index}}" ng-bind="issue.title" class="issue-title-heading pull-left"></a>
+                    <span class="tag-style  pull-left" ng-bind="issue.label" ng-style="{background: issue.tagcolor}"></span>
+                    <div class="small-text">#{{issue.id}} opened by {{issue.author}}</div>
+                </div>
+                <div class="comment-details pull-right" ng-if="issue.comment != 0">
+                    <i class="glyphicon glyphicon-comment pad-5px"></i> <span class="pad-rht-25">{{issue.comment}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nodata-section" ng-if="filteredData.length===0">
+        <div class="noissue-data">
+            <i class="fa fa-exclamation-circle fa-5x" aria-hidden="true"></i>
+            <h3>Welcome to Issues!</h3>
+            <p>Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should <a href="#/newissue">create an issue</a>.</p>
+        </div>
+    </div>
+</div>

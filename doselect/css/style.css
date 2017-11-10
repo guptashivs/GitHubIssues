@@ -1,0 +1,301 @@
+.container {
+    width: 70%;
+}
+
+.tag-style {
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+
+/* header section style: Start */
+.header-section {
+    background-color: #fafbfc;
+    border-bottom: 1px solid #e9eaee;
+}
+
+.header-style {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 14px !important;
+}
+
+.global-filter {
+    border: 1px solid #ccc;
+}
+
+.search-field {
+    width: 320px;
+    float: left;
+    margin-left: -1px;
+    border-radius: 0;
+}
+
+.button-item {
+    float: left;
+    padding: 6px 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #586069;
+    border: 1px solid #e1e4e8;
+}
+
+.grouped-button {
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.btn-style {
+    background-color: #279f43;
+    background-image: none;
+    border-color: rgba(27, 31, 35, 0.5);
+    box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+}
+
+.btn-style:hover {
+    text-decoration: none;
+    background-color: #279f43;
+}
+
+.button-item:hover {
+    text-decoration: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+/* header section style: End */
+
+
+/* issue listing table style: Start*/
+.table-header {
+    background-color: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 3px 3px 0 0;
+    margin-top: 20px;
+    width: 100%;
+    height: 42px;
+}
+
+.table-row {
+    border: 1px solid #e1e4e8;
+}
+
+.nodata-section {
+    position: relative;
+    padding: 32px;
+    text-align: center;
+    background-color: #fafbfc;
+    border: 1px solid #e1e4e8;
+    border-radius: 3px;
+    padding: 80px 40px;
+    margin-top: 20px
+}
+
+.noissue-data .fa {
+    height: 40px;
+    width: 40px;
+}
+
+.comment-details i {
+    margin-top: 1px;
+}
+
+.issue-title-heading {
+    font-weight: 400;
+    font-size: 16px;
+    color: #24292e;
+}
+.issue-title-heading:hover{
+    color: #0366d6;
+    text-decoration: none;
+}
+/* issue listing table style: End*/
+
+
+/* filter style for listing table : Start */
+.filter-action-dropdown {
+    position: absolute;
+    z-index: 30;
+    /*display: block;*/
+    width: 230px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding-left: 0;
+    overflow: hidden;
+    font-size: 12px;
+    color: #586069;
+    background-color: #fff;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 3px;
+}
+
+.filter-action-header {
+    padding: 8px 10px;
+    line-height: 16px;
+    background: #f6f8fa;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.filter-title {
+    font-weight: 600;
+    color: #24292e;
+}
+
+.filter-action-search {
+    border-bottom: 1px solid #eaecef;
+    display: block;
+    text-align: left;
+    background-color: #fff;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    list-style-type: none;
+    padding: 5px;
+}
+
+.filter-action-search input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 5px;
+    border: 1px solid #dfe2e5;
+    border-radius: 3px;
+}
+
+.menu-item {
+    padding: 3px 8px 4px 15px;
+    border-bottom: 1px solid #eaecef;
+    cursor: pointer;
+    display: block;
+    text-align: left;
+    background-color: #fff;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    list-style-type: none;
+    font-size: 12px;
+    color: #586069;
+}
+
+.menu-item a,
+.label-sort-th a {
+    text-decoration: none;
+    color: #586069;
+}
+
+.selected,
+.selected:hover {
+    color: #fff;
+    background-color: #0366d6;
+    border-color: #0366d6;
+}
+
+.filter-data-list {
+    height: 100px;
+    overflow-y: auto;
+}
+/* filter style for listing table : End */
+
+
+/* Label Page style : Start*/
+.label-heading .btn {
+    border: 0;
+    padding: 0 10px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 3px;
+    line-height: 2;
+}
+
+.label-openissues span {
+    padding: 10px 10px;
+    color: #586069;
+    font-size: 12px;
+}
+
+.label-sort {
+    top: 30px;
+    left: -105px;
+}
+/* Label Page style : End*/
+
+
+/*Milestones Page style : Start */
+.progress-details {
+    width: 420px;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+.progress-bar-style {
+    display: block;
+    height: 10px;
+    overflow: hidden;
+    background-color: #eaecef;
+    border-radius: 3px;
+}
+
+.completedStat {
+    background-color: #2cbe4e;
+    width: 20%;
+    display: block;
+    height: 100%;
+}
+/*Milestones Page style : End */
+
+
+/* Create New Issue page style : Start*/
+.content-block {
+    display: block;
+    overflow: hidden;
+    width: 700px;
+    background-color: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+}
+
+.newissue-content {
+    height: 450px;
+}
+
+.commentissue-content {
+    min-height: 300px;
+    margin-bottom: 25px;
+}
+
+.create-issue-text {
+    width: 100%;
+}
+
+.note-section {
+    color: #735c0f;
+    background-color: #fffbdd;
+    border-color: rgba(27, 31, 35, 0.15);
+    position: relative;
+    padding: 16px;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 3px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.submit-btn,
+.submit-btn:hover {
+    color: #fff;
+    background-color: #28a745;
+}
+/* Create New Issue page style : End*/
+
+
+/*Issue comment page : Start */
+.hr-line {
+    width: 100%;
+    float: left;
+    border-width: 2px;
+}
+
+/* Issue comment page : End*/

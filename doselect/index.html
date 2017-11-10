@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="githubAPP">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" width="device-width">
+    <title>Github</title>
+    <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/global_style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ng-ckeditor/0.2.1/ng-ckeditor.css">
+</head>
+
+<body ng-controller="githubIssueCtrl as pm">
+    <div class="header-section">
+        <header class="disp-flex header-style">
+            <span class="pad-5px"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
+            <span> Issues <span class="bg-grey">({{filteredData.length}})</span></span>
+            <span> </span>
+        </header>
+    </div>
+    <div class="main-section">
+        <div class="container" ng-view>
+        </div>
+    </div>
+    <div class="footer-section"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+    <script src="libraries/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-ckeditor/0.2.1/ng-ckeditor.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="dropdownFilterModal/directives/dropdown_filter_modal.js"></script>
+</body>
+
+</html>

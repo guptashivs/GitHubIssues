@@ -1,0 +1,97 @@
+/* global reusable style : Start*/
+
+body {
+    width: 100%;
+}
+
+.small-text{
+    color: #586069;
+    font-size: 12px;
+}
+
+.bg-grey{
+    background-color: #e6e6e6;
+}
+
+.pad-5px {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.pad-rht-25{
+    padding-right: 25px;
+}
+
+.pad-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.pad-tb-5 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.pad-all-10{
+    padding:10px;
+}
+.pad-tb-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.pad-top-10px {
+    padding-top: 15px;
+}
+
+.mar-zero{
+    margin: 0;
+}
+
+.mar-10 {
+    margin-left: 10px;
+}
+
+.mar-lft-50{
+    margin-left: 50px;
+}
+.mar-top-15 {
+    margin-top: 15px;
+}
+
+.mar-tb-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mar-all-10 {
+    margin: 10px;
+}
+
+.disp-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.overflow-style {
+    overflow: hidden;
+}
+
+.disp-none {
+    display: none;
+}
+
+.disp-inline{
+    display: inline-block;
+}
+
+.norm-font{
+    font-weight: normal;
+    font-size: 28px;
+}
+
+.top-border{
+    border:0;
+    border-top: 1px solid #e1e4e8;
+}
+/* global reusable style : End*/

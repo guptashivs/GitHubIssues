@@ -1,0 +1,24 @@
+<div class="create-newissue-section">
+    <div class="contributing note-section">
+        Before you open an issue please review the <a href="https://github.com/twbs/bootstrap/blob/v4-dev/.github/CONTRIBUTING.md" target="_blank"><strong>contributing</strong></a> and <a href="https://github.com/twbs/bootstrap/blob/v4-dev/CODE_OF_CONDUCT.md" target="_blank"><strong>conduct</strong></a> guidelines for this repository.
+    </div>
+    <div class="create-issue-text">
+    	<div class="author-image pull-left"> <img src="https://avatars2.githubusercontent.com/u/11635919?s=400&u=7bc59b0f9212e7d244ce955318cc6b0034dcf8cf&v=4" height="50" width="50" /> </div>
+        <div class="newissue-content content-block pull-left">
+            <input type="text" class="form-control title-field" name="issueTitle" placeholder="Title">
+            <textarea ckeditor="editorOptions" name="editor1" ng-model="newIssueContent"></textarea>
+            <script>
+            window.onload = function() {
+                CKEDITOR.replace('editor1');
+            };
+            </script>
+            <div class="submit-section">
+                <div class="pull-left pad-5px mar-all-10"><span> Styling with Markdown is supported</span>
+                </div>
+                <button type="button" class="btn btn-primary submit-btn pull-right mar-all-10">
+                    Submit New Issue
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

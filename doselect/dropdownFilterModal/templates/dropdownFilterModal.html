@@ -1,0 +1,7 @@
+
+
+<ul role="menu" class="filter-action-dropdown" uib-dropdown-menu>
+    <li class="filter-action-header"><span class="filter-title">Filter by {{label}}</span><i class="fa fa-times pull-right pointer" ng-click="closeDropdown()"></i></li>
+    <li class="filter-action-search"><input type="text" name="search-dropdown-item" class="form-control" placeholder="Filter items" ng-model="selectedLabelFilter"></li>
+    <li class="menu-item" ng-repeat="data in filteredData track by $index"><img ng-src="{{data['profileImage']}}" style="height: 25px; width:25px;"  alt="" ng-if="keyword == 'author'"/><a ng-bind="data[keyword]" ng-click="selectedItem(data)" class="disp-inline" style="display:inline-block;"></a></li>
+</ul>

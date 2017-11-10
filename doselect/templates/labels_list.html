@@ -1,0 +1,34 @@
+<div class="label-list-section pad-tb-10 ">
+    <div class="grouped-button mar-tb-10">
+        <a href="#/labels" class=" button-item selected">Labels</a>
+        <a href="#/milestones" class=" button-item">Milestones</a>
+    </div>
+    <div class="label-list-table mar-10">
+        <div class="table-header">
+            <div class="open-th pull-left pad-tb-10">
+                <span class="pad-15">{{labelsCount}} Labels</span>
+            </div>
+            <div class="label-sort-th pull-right pad-tb-10 author-button" uib-dropdown on-toggle="toggled(open)">
+                <a href class="pad-15" id="simple-dropdown" uib-dropdown-toggle>Sort<i class="fa fa-caret-down pad-5px" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu label-sort" uib-dropdown-menu role="menu" aria-labelledby="simple-dropdown">
+                    <li class="menu-item pad-15">Sort</li>
+                    <li ng-repeat="item in filterSort track by $index" ng-click="sortLabelList($index)" class="menu-item pad-15">
+                        <a href>{{item}} </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="table-body overflow-style">
+            <div class="table-row pad-tb-5" ng-repeat="label in labels" style="height: 42px;">
+                <div class="label-heading pull-left pad-15">
+                    <button type="button" class="btn btn-default btn-sm btn-primary" ng-style="{background: label.code}">
+                        <span class="glyphicon glyphicon-tag pad-5px"></span> {{label.name}}
+                    </button>
+                </div>
+                <div class="label-openissues pull-right pad-5px">
+                    <span>{{label.open}} open issues </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="label-list-section pad-tb-10 ">
+    <div class="grouped-button mar-tb-10">
+        <div class="mar-tb-10 overflow-style">
+            <h1 class="norm-font pull-left mar-zero" ng-bind="commentData.title">No Title Mentioned</h1>
+            <a href="#/newissue" class="btn btn-primary btn-style pull-right">
+            New issue
+          </a>
+        </div>
+        <div class="pull-left"><a href="" class="btn btn-primary btn-style pull-left " ng-disabled="true"><i class="fa fa-exclamation-circle pad-5px" aria-hidden="true"></i>Open</a><span class="pad-15">{{commentData.author}} opened this issue 16 hours ago ·{{commentData.comment}} comments</span></div>
+    </div>
+    <div class="comment-list-table mar-10">
+        <div class="top-border">
+            <div class="create-newissue-section">
+                <div class="create-issue-text">
+                    <div class="commentissue-content content-block pull-left mar-top-15 mar-lft-50">
+                        <div class="bg-grey pad-all-10"> NYCJacob commented 15 hours ago </div>
+                        <div class="pad-all-10"><span>{{commentData.comment > 0? commentData.commentdetails : "There is no comment."}}.
+                        </span></div>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </div>
+            <div class="create-issue-text">
+                <div class="author-image pull-left"> <img src="https://avatars2.githubusercontent.com/u/11635919?s=400&u=7bc59b0f9212e7d244ce955318cc6b0034dcf8cf&v=4" height="50" width="50" /> </div>
+                <div class="commentissue-content content-block pull-left">
+                    <input type="text" class="form-control title-field" name="issueTitle" placeholder="Title">
+                    <textarea ckeditor="editorOptions" name="commenteditor" ng-model="newCommentVal"></textarea>
+                    <script>
+                    window.onload = function() {
+                        CKEDITOR.replace('commenteditor');
+                    };
+                    </script>
+                    <div class="submit-section">
+                        <div class="pull-left pad-5px mar-all-10"><span> Styling with Markdown is supported</span>
+                        </div>
+                        <button type="button" class="btn btn-primary submit-btn pull-right mar-all-10">
+                            comment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
